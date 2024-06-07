@@ -1,0 +1,22 @@
+Licencia de Software Personalizada
+
+Copyright (c) 2024 [Alfredo Daniel Guzmán Torres]
+
+Se concede permiso por la presente, sin cargo, a cualquier persona que obtenga una copia
+de este software y los archivos de documentación asociados (el "Software"), para utilizar
+el Software con las siguientes restricciones:
+
+1. No se permite copiar, duplicar, modificar, fusionar, publicar, distribuir, sublicenciar
+   y/o vender copias del Software, total o parcialmente, sin el consentimiento expreso y
+   por escrito del titular de los derechos.
+
+2. El uso del Software está limitado exclusivamente al uso personal y no comercial.
+
+3. No se permite la redistribución del Software, ni en su forma original ni modificada.
+
+El Software se proporciona "TAL CUAL", sin garantía de ningún tipo, expresa o implícita,
+incluyendo pero no limitado a garantías de comerciabilidad, idoneidad para un propósito
+particular y no infracción. En ningún caso los autores o titulares del copyright serán
+responsables de ninguna reclamación, daño o otra responsabilidad, ya sea en una acción
+contractual, agravio o de otro modo, que surja de, fuera de o en conexión con el Software
+o el uso u otros tratos en el Software.
