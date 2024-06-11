@@ -1,0 +1,29 @@
+body{
+  margin: 0;
+  border: 0;
+  font-family: "Nunito", sans-serif;
+}
+:root{
+  --cornflower-blue50: #f1f4fd;
+  --cornflower-blue100: #dfe7fa;
+  --cornflower-blue200: #c6d5f7;
+  --cornflower-blue300: #9fbaf1;
+  --cornflower-blue400: #668de6;
+  --cornflower-blue500: #5172e0;
+  --cornflower-blue600: #3c56d4;
+  --cornflower-blue700: #3343c2;
+  --cornflower-blue800: #2f399e;
+  --cornflower-blue900: #2b347d;
+  --cornflower-blue950: #1e224d;
+  --black-50: #f6f6f6;
+  --black-100: #e7e7e7;
+  --black-200: #d1d1d1;
+  --black-300: #b0b0b0;
+  --black-400: #888888;
+  --black-500: #6d6d6d;
+  --black-600: #5d5d5d;
+  --black-700: #4f4f4f;
+  --black-800: #454545;
+  --black-900: #3d3d3d;
+  --black-950: #000000;
+}
