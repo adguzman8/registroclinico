@@ -1,0 +1,25 @@
+.patients-container{
+    width: 100%;
+    height: 100%;
+}
+.patients-container-items {
+  background-color: coral;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+}
+
+.patients-title {
+  grid-area: 1 / 1 / 3 / 9;
+}
+.patients-notifications {
+  grid-area: 3 / 7 / 9 / 9;
+}
+.patients-count {
+  grid-area: 3 / 1 / 5 / 7;
+}
+.patients-table {
+  grid-area: 5 / 1 / 9 / 7;
+}

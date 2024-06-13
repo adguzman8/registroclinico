@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import "../assets/css/Dashboard.css";
 import UserMenu from "../components/UserMenu.jsx";
 import UserHeader from "../components/UserHeader.jsx";
+import DashPatients from "../components/Dash.Patients.jsx";
 export function Dashboard() {
   const { id1, id2 } = useParams();
   const Panel1 = () => {
@@ -12,7 +13,7 @@ export function Dashboard() {
       case "calendar":
         return <h1>Calendario</h1>; // Cambia "productos" por "Productos"
       case "patients":
-        return <h1>Patients</h1>; // Cambia "Comercios" por "Comercios"
+        return <DashPatients/>; // Cambia "Comercios" por "Comercios"
       case "integration":
         return <h1>Integración</h1>; // Cambia "Comercios" por "Comercios"
       case "activities":

@@ -20,6 +20,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setAuthenticated] = useState(false);
+  const [idUser, setIdUser] = useState(null);
 
   const registro = async (values) => {
     try {
@@ -33,11 +34,10 @@ export const AuthProvider = ({ children }) => {
   const LoginUser = async (values) => {
     try {
       const res = await loginRequest(values);
-      console.log("user inicia sesion");
       setUser(res.data);
       setAuthenticated(true);
     } catch (error) {
-      console.log(errors);
+      console.log(error);
     }
   };
 
@@ -47,21 +47,23 @@ export const AuthProvider = ({ children }) => {
     setAuthenticated(false);
     try {
       const userLogout = await logoutUse();
-      console.log("logout");
     } catch (error) {
-      console.log(errors);
+      console.log(error);
     }
   };
 
   useEffect(() => {
     const checkLogin = async () => {
       const cookies = Cookies.get();
+      const res = await verifyToken(cookies.token);
+      setIdUser(res.data.id);
       if (!cookies.token) {
         setAuthenticated(false);
         return;
       }
       try {
         const res = await verifyToken(cookies.token);
+
         if (!res.data) return setAuthenticated(false);
         setAuthenticated(true);
         setUser(res.data);
@@ -81,6 +83,7 @@ export const AuthProvider = ({ children }) => {
         logout,
         registro,
         LoginUser,
+        idUser,
       }}
     >
       {children}
