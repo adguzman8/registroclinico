@@ -21,4 +21,5 @@
 
 .div3 {
   grid-area: 2 / 2 / 9 / 9;
+  margin: 5px;
 }

@@ -1,12 +1,13 @@
-import { usePatients } from "../context/patients.context.jsx";
 import "../assets/css/Dash.createPatients.css";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/auth.context.jsx";
+import { usePatients } from "../context/patients.context.jsx";
 
 export function CreatePatient() {
-  const { windCreatePat, setWindCreatePat,CreateItemPatient, statusCreate } = usePatients();
-  const {idUser}=useAuth();
-  console.log(idUser)
+  const { windCreatePat, setWindCreatePat, CreateItemPatient, statusCreate } =
+    usePatients();
+  const { idUser } = useAuth();
+  const { CreateItPatient } = usePatients();
 
   const {
     register,
@@ -34,17 +35,14 @@ export function CreatePatient() {
         >
           X
         </span>
-        <form className="create-patient-form"
-                      onSubmit={handleSubmit((data) => {
-                        const formData = new FormData();
-                        formData.append("name", data.name);
-                        formData.append("description", data.description);
-                        formData.append("category", data.category);
-                        formData.append("price", data.price);
-                        formData.append("image", data.file[0]);
-                        formData.append("id_doc", shop); //se debe cambiar por id_DOCT
-                       // createitemProduct(formData);
-                      })}>
+        <form
+          onSubmit={handleSubmit((data) => {
+            const dataWithIdDoc = { ...data, id_doc: idUser };
+            CreateItPatient(dataWithIdDoc);
+            console.log(data);
+          })}
+          className="create-patient-form"
+        >
           <h1>Crear paciente</h1>
           <label>Nombre</label>
           <input
@@ -59,7 +57,8 @@ export function CreatePatient() {
             {...register("lastname", { required: true })}
           />
           <label>Tipo de documento</label>
-          <select defaultValue="CC"
+          <select
+            defaultValue="CC"
             name="typedocument"
             placeholder=""
             {...register("typedocument", { required: true })}
@@ -77,6 +76,12 @@ export function CreatePatient() {
             type="text"
             name="document"
             {...register("document", { required: true })}
+          />
+          <label>Edad</label>
+          <input
+            type="text"
+            name="age"
+            {...register("age", { required: true })}
           />
           <label>Fecha de nacimiento</label>
           <input
@@ -96,7 +101,6 @@ export function CreatePatient() {
           <input
             type="phone"
             name="phone"
-            placeholder="correo@micorreo.com"
             {...register("phone", { required: true })}
           />
           <h3>Datos adicionales</h3>
@@ -107,11 +111,20 @@ export function CreatePatient() {
             {...register("eps", { required: true })}
           />
           <label>Estado civil</label>
-          <input
-            type="text"
+          <select
+            defaultValue="Soltero"
             name="civilStatus"
+            placeholder=""
             {...register("civilStatus", { required: true })}
-          />
+          >
+            <option value="Union libre">Union libre</option>
+            <option value="Solter@" selected>
+              Solter@
+            </option>
+            <option value="Casad@">Casad@</option>
+            <option value="Divorciad@">Divorciad@</option>
+            <option value="Viud@">Viud@</option>
+          </select>
 
           <label>Ocupación</label>
           <input
@@ -139,13 +152,13 @@ export function CreatePatient() {
             {...register("address", { required: true })}
           />
 
-          <label>Dirección</label>
+          <label>Observaciones</label>
           <textarea
             name="observations"
             {...register("observations", { required: true })}
           />
           <br></br>
-          <button>Crear</button>
+          <button className="button1">Crear</button>
         </form>
       </div>
     </div>

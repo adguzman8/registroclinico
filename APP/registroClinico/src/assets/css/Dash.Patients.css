@@ -3,23 +3,43 @@
     height: 100%;
 }
 .patients-container-items {
-  background-color: coral;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-column-gap: 3px;
   grid-row-gap: 3px;
+  height: 100%;
 }
 
 .patients-title {
   grid-area: 1 / 1 / 3 / 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 10px 0px 10px;
+}
+.patients-title button{
+  padding: 8px;
+  border-radius: 10px;
+  background-color: var(--cornflower-blue300);
+  color: #fff;
+  border: 1px solid;
+  cursor: pointer;
+
+}
+.patients-title button:hover{
+  background-color: #fff;
+  color:var(--cornflower-blue300);
 }
 .patients-notifications {
   grid-area: 3 / 7 / 9 / 9;
 }
 .patients-count {
+  display: flex;
+  justify-content: space-between;
   grid-area: 3 / 1 / 5 / 7;
 }
 .patients-table {
+  height: 100%;
   grid-area: 5 / 1 / 9 / 7;
 }

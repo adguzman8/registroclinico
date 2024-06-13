@@ -1,0 +1,23 @@
+.table-container-listpatients {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.table-list-patrients {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.table-list-patrients td {
+  border-top: 1px solid var(--cornflower-blue50);
+  border-bottom: 1px solid var(--cornflower-blue50);
+}
+.table-list-patrients tbody tr {
+  border-top: 1px solid var(--cornflower-blue50);
+  border-bottom: 1px solid var(--cornflower-blue50);
+  font-size: 12px;
+  text-align: center;
+}

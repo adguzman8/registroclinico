@@ -52,7 +52,6 @@ const patientsSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     city: {
       type: String,

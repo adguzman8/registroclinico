@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 import authRoutes from "../src/routes/auth.routes.js"
+import patientRoutes from "../src/routes/patient.routes.js"
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api", authRoutes);
+app.use("/api", patientRoutes);
 
 export default app;
