@@ -53,6 +53,8 @@ export const login = async (req, res) => {
       const token = await createAccesToken({
         id: userFound._id,
         email: userFound.email,
+        name: userFound.name,
+        lastname: userFound.lastname,
         rol: userFound.rol,
       });
       console.log(token);
@@ -62,6 +64,7 @@ export const login = async (req, res) => {
       res.json({
         id: userFound._id,
         name: userFound.name,
+        lastname: userFound.lastname,
         email: userFound.email,
       });
     } catch (error) {

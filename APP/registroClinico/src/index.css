@@ -58,3 +58,58 @@ body{
   background-color: #c7c7c7;
   border-radius: 5px;
 }
+
+.close-wind{
+  color: var(--cornflower-blue600);
+  font-weight: 800;
+  font-size: 30px;
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  top: 10px;
+}
+.close-wind:hover{
+  color: var(--black-500);
+
+}
+
+.Input1{
+  border-radius: 20px;
+  border: 1px solid var(--black-300);
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.Input1:focus{
+  border: 1px solid var(--cornflower-blue300);
+  outline: none;
+}
+
+.Input1-select{
+  border-radius: 20px;
+  border: 1px solid var(--black-300);
+  padding: 5px;
+  margin-bottom: 5px;
+  appearance: none; /* Elimina el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.Input1-select:focus{
+  border: 1px solid var(--cornflower-blue300);
+  outline: none;
+}
+
+
+.Input1-textarea{
+  border-radius: 20px;
+  border: 1px solid var(--black-300);
+  padding: 5px;
+  margin-bottom: 5px;
+  appearance: none; /* Elimina el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.3s ease-in-out; /* Permite cambiar el tamaño solo verticalmente */
+}
+.Input1-textarea:focus{
+  border: 1px solid var(--cornflower-blue300);
+  outline: none;
+}

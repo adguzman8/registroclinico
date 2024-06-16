@@ -26,28 +26,30 @@
     height: 80%;
     width: 80%;
 }
-.close-wind{
-    color: var(--cornflower-blue600);
-    font-weight: 800;
-    font-size: 30px;
-    position: absolute;
-    right: 15px;
-    cursor: pointer;
-    top: 10px;
-}
-.close-wind:hover{
-    color: var(--black-500);
 
-}
 .create-patient-form{
-    margin: 40px 10px 10px 10px;
-    display: flex;
+    margin: 40px 10px 10px 50px;
     flex-direction: column;
 }
-.create-patient-form>input{
-    max-width: 70%;
-    min-width: 20%;
+
+.create-patient-form>label{
+    margin:0px 5px 0px 5px;
 }
-.create-patient-form>select{
-    max-width: 5%;
+
+.Input-date{
+    width: 120px;
+}
+
+.Input-name{
+    width: 200px;
+}
+.Input-civilStatus{
+    width: 130px;
+}
+.TextArea-creat-patient{
+    width: 80%;
+    min-height: 150px;
+}
+.create-patiente-button1{
+    width: 100px;
 }

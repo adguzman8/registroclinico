@@ -39,25 +39,29 @@ export function CreatePatient() {
           onSubmit={handleSubmit((data) => {
             const dataWithIdDoc = { ...data, id_doc: idUser };
             CreateItPatient(dataWithIdDoc);
-            console.log(data);
           })}
           className="create-patient-form"
         >
           <h1>Crear paciente</h1>
-          <label>Nombre</label>
+          <label>Nombres</label>
           <input
+            className="Input1 Input-name"
             type="text"
             name="name"
             {...register("name", { required: true })}
           />
-          <label>Apellido</label>
+
+          <label>Apellidos</label>
           <input
+            className="Input1 Input-name"
             type="text"
             name="lastname"
             {...register("lastname", { required: true })}
           />
+          <br></br>
           <label>Tipo de documento</label>
           <select
+            className="Input1-select"
             defaultValue="CC"
             name="typedocument"
             placeholder=""
@@ -73,18 +77,22 @@ export function CreatePatient() {
           </select>
           <label>No.Documento</label>
           <input
+            className="Input1"
             type="text"
             name="document"
             {...register("document", { required: true })}
           />
+          <br></br>
           <label>Edad</label>
           <input
+            className="Input1"
             type="text"
             name="age"
             {...register("age", { required: true })}
           />
           <label>Fecha de nacimiento</label>
           <input
+            className="Input1-select Input-date"
             type="date"
             name="birthdate"
             {...register("birthdate", { required: true })}
@@ -92,6 +100,7 @@ export function CreatePatient() {
           <h3>Datos de contacto</h3>
           <label>Correo</label>
           <input
+            className="Input1"
             type="mail"
             name="email"
             placeholder="correo@micorreo.com"
@@ -99,6 +108,7 @@ export function CreatePatient() {
           />
           <label>Teléfono</label>
           <input
+            className="Input1"
             type="phone"
             name="phone"
             {...register("phone", { required: true })}
@@ -106,12 +116,15 @@ export function CreatePatient() {
           <h3>Datos adicionales</h3>
           <label>EPS</label>
           <input
+            className="Input1"
             type="text"
             name="eps"
             {...register("eps", { required: true })}
           />
+          <h3>Datos personales</h3>
           <label>Estado civil</label>
           <select
+            className="Input1-select Input-civilStatus"
             defaultValue="Soltero"
             name="civilStatus"
             placeholder=""
@@ -128,37 +141,42 @@ export function CreatePatient() {
 
           <label>Ocupación</label>
           <input
+            className="Input1"
             type="text"
             name="ocupation"
             {...register("ocupation", { required: true })}
           />
+          <br></br>
           <label>Departamento</label>
-          <input
+          <input className="Input1-select"
             type="text"
             name="department"
             {...register("department", { required: true })}
           />
           <label>Ciudad</label>
-          <input
+          <input className="Input1-select"
             type="text"
             name="city"
             {...register("city", { required: true })}
           />
-
+          <br></br>
           <label>Dirección</label>
-          <input
+          <input className="Input1"
             type="text"
             name="address"
             {...register("address", { required: true })}
-          />
+            />
+            <br></br>
+            <br></br>
 
           <label>Observaciones</label>
-          <textarea
+          <br></br>
+          <textarea className="Input1-textarea TextArea-creat-patient"
             name="observations"
             {...register("observations", { required: true })}
           />
           <br></br>
-          <button className="button1">Crear</button>
+          <button className="button1 create-patiente-button1">Crear</button>
         </form>
       </div>
     </div>

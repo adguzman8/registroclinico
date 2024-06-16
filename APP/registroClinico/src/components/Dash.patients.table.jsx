@@ -5,8 +5,7 @@ import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutl
 import "../assets/css/Dash.patients.table.css";
 
 export default function PatientTable() {
-  const { patients } = usePatients();
-  console.log(patients);
+  const { patients,setWindEditPat,windEditPat, obtenerPatient} = usePatients();
   return (
     <div className="table-container-listpatients">
       <table className="table-list-patrients">
@@ -32,7 +31,8 @@ export default function PatientTable() {
                 <td>
                   <ModeEditOutlineOutlinedIcon
                     onClick={() => {
-                      console.log("ahi");
+                      setWindEditPat(!windEditPat);
+                      obtenerPatient(item._id);
                     }}
                   />
                 </td>

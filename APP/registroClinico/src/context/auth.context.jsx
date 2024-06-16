@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await loginRequest(values);
       setUser(res.data);
+      setIdUser(res.data.id)
       setAuthenticated(true);
     } catch (error) {
       console.log(error);

@@ -1,0 +1,28 @@
+.edit-patient-disable{
+    display: none;
+}
+.edit-patient-enable{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit-patient-background{
+    position: absolute;
+    background-color: rgb(165, 165, 165);
+    opacity: .5;
+    height: 100%;
+    width: 100%;
+}
+.edit-patient-list{
+    overflow-y: auto;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    height: 90%;
+    width: 90%;
+}

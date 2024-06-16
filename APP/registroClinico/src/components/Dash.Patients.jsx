@@ -4,12 +4,12 @@ import { usePatients } from "../context/patients.context.jsx";
 import { CreatePatient } from "./Dash.createPatients.jsx";
 import { useAuth } from "../context/auth.context.jsx";
 import PatientTable from "./Dash.patients.table.jsx";
+import EditPacient from "./Dash.patients.edit.jsx";
 
 export default function DashPatients() {
   const { windCreatePat, setWindCreatePat, patients, listPatients } =
     usePatients();
   const { idUser } = useAuth();
-
   useEffect(() => {
     listPatients(idUser);
   }, []);
@@ -44,6 +44,7 @@ export default function DashPatients() {
         </div>
       </div>
       <CreatePatient />
+      <EditPacient/>
     </div>
   );
 }

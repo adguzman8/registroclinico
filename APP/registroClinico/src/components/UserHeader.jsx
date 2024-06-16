@@ -5,8 +5,8 @@ import { useAuth } from "../context/auth.context.jsx";
 
 export default function UserHeader() {
   const [openMenu, setOpenmenu] = useState(false);
-  const { logout } = useAuth();
-
+  const { logout,user  } = useAuth();
+  
   const OpenMenuUser = () => {
     setOpenmenu(!openMenu);
   };
@@ -18,7 +18,7 @@ export default function UserHeader() {
           <p>N</p>
         </div>
         <div className="user-header-name">
-          <span>Nombre</span>
+          <span>{user.name} {user.lastname}</span>
         </div>
         <div className="user-header-company">
           <p>Empresa</p>
