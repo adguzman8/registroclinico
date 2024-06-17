@@ -21,14 +21,14 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [idUser, setIdUser] = useState(null);
-
+  const [registerStatus, setRegisterStatus] = useState(null)
   const registro = async (values) => {
     try {
       const res = await registerRequest(values);
+      console.log(res.data)
       setUser(res.data);
     } catch (error) {
-      setErrors(error.response.data);
-      console.log(errors);
+      console.log(error);
     }
   };
   const LoginUser = async (values) => {

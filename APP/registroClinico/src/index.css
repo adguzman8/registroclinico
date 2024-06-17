@@ -113,3 +113,6 @@ body{
   border: 1px solid var(--cornflower-blue300);
   outline: none;
 }
+.disable{
+  display: none;
+}

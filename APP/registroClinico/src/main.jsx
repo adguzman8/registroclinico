@@ -9,12 +9,14 @@ import Register from "./pages/Register.jsx";
 import ProtectedRoute from "./function/ProtectRoute.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import { PatientsProvider } from "./context/patients.context.jsx";
+import Menu from "./components/Menus.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
     <PatientsProvider>
       <React.StrictMode>
         <BrowserRouter>
+        <Menu></Menu>
           <Routes>
             <Route path="/" element={<App />}></Route>
             <Route path="/login" element={<Login />}></Route>

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import "../assets/css/Login.css";
 import { useAuth } from "../context/auth.context.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 function Login() {
   const {
@@ -21,16 +21,16 @@ function Login() {
 
   return (
     <div className="login-container">
-      <div>
-        Login
+      <div className="login-form-container">
         <form
           className="login-form"
           onSubmit={handleSubmit((values) => {
             LoginUser(values);
           })}
         >
+          <h3>Iniciar sesion</h3>
           <label>Correo</label>
-          <input
+          <input className="Input1 Login-input"
             label="Write your email"
             type="email"
             name="email"
@@ -38,12 +38,14 @@ function Login() {
             {...register("email", { required: true })}
           />
           <label>Contraseña</label>
-          <input
+          <input className="Input1 Login-input"
             type="password"
             name="password"
             {...register("password", { required: true })}
           />
-          <button>Iniciar</button>
+          <button className="button1 Login-button">Iniciar</button>
+          <Link to="/forgetPasword" className="Login-link">Olvide la contraseña</Link>
+          <Link to="/register" className="Login-link register-link">Registrarse</Link>
         </form>
       </div>
     </div>
