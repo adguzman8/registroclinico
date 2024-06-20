@@ -10,7 +10,7 @@ function Menu() {
             <div className="Header-menu-links">
                 <Link to="/">Inicio</Link>
                 <Link to="/login">login</Link>
-                <Link to="/register">Register</Link>
+                <Link to="/register">Registro</Link>
                 <Link to="/aboutUs">Conoce más</Link>
             </div>
             <div className="nav-menu-bar">
@@ -22,7 +22,7 @@ function Menu() {
                 <ul>
                     <li> <Link to="/">Inicio</Link></li>
                     <li> <Link to="/login">login</Link></li>
-                    <li><Link to="/register">Register</Link></li>
+                    <li><Link to="/register">Registro</Link></li>
                     <li><Link to="/aboutUs">Conoce más</Link></li>
                 </ul>
             </div>

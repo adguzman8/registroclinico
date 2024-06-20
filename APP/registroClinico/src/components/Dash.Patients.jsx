@@ -31,20 +31,32 @@ export default function DashPatients() {
         <div className="patients-notifications">Notificaciones</div>
         <div className="patients-count">
           <div>
-            Total pacientes
+            <p>Total pacientes</p>
             <br></br>
             <span>{patients && patients.length}</span>
           </div>
-          <div>Pacientes agendados</div>
-          <div>Pacientes sin agenda</div>
-          <div>Pacientes pendientes</div>
+          <div>
+            <p>Pacientes agendados</p>
+            <br></br>
+            <span>{patients && patients.length}</span>
+          </div>
+          <div>
+            <p>Pacientes sin agenda</p>
+            <br></br>
+            <span>{patients && patients.length}</span>
+          </div>
+          <div>
+            <p>Pacientes pendientes</p>
+            <br></br>
+            <span>{patients && patients.length}</span>
+          </div>
         </div>
         <div className="patients-table">
           <PatientTable />
         </div>
       </div>
       <CreatePatient />
-      <EditPacient/>
+      <EditPacient />
     </div>
   );
 }

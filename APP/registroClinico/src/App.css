@@ -1,0 +1,35 @@
+.banner-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    background-color: var(--cornflower-blue50);
+    height: calc(100vh - 60px);
+}
+
+.banner-container-text>h1 {
+    font-weight: 800;
+    color: var(--cornflower-blue500);
+    font-size: 32px;
+}
+.banner-container-text>h1 {
+    font-weight: 800;
+    color: var(--cornflower-blue500);
+    font-size: 32px;
+}
+.banner-container-text>p{
+    color: var(--black-400);
+}
+.intro-container-img>img{
+    width:50vh;
+}
+
+.banner-container-text>a{
+    padding: 10px;
+    background-color: var(--cornflower-blue300);
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
+    font-weight: 800;
+}

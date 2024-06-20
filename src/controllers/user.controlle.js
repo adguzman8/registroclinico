@@ -8,9 +8,8 @@ export const register = async (req, res) => {
   const { name, lastname, email, password } = req.body;
   try {
     const userFound = await User.findOne({ email })
-    console.log("user", userFound)
     if (userFound) return res.status(400).json({
-      message: ["The password is incorrect"],
+      message: "El usuario ya existe",
     });
     const passwordHash = await bcrypt.hash(password, 10);
 
@@ -23,13 +22,13 @@ export const register = async (req, res) => {
     });
     // saving the user in the database
     const userSaved = await newUser.save();
-    // create access token
-    if (!userSaved)
-      return res.status(400).json({
+    // Send the saved user back to the frontend
+    if (userSaved)
+      return res.status(201).json({
         message: ["The email already exist"],
       });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: "El usuario ya existe" });
   }
 };
 

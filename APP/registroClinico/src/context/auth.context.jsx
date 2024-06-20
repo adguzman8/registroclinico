@@ -25,10 +25,27 @@ export const AuthProvider = ({ children }) => {
   const registro = async (values) => {
     try {
       const res = await registerRequest(values);
-      console.log(res.data)
       setUser(res.data);
+      if (res.status === 201) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "El usuario se creo correctamente, valide el acceso.",
+          showConfirmButton: false,
+          timer: 2500
+        });
+      }
     } catch (error) {
-      console.log(error);
+      console.log(error.response.status);
+      if (error.response.status === 400) {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "El usuario ya existe",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
     }
   };
   const LoginUser = async (values) => {

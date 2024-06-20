@@ -31,7 +31,7 @@ export const loginSchema = z.object({
   password: z.string({
       required_error: "Password requiered",
     })
-    .min(8, {
+    .min(6, {
       message: "Password must be at least 6 characters",
     }),
 });

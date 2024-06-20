@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./context/auth.context";
+import Psicologa from "./assets/img/psicologa.png"
 function App() {
   const [count, setCount] = useState(0);
   const { isAuthenticated } = useAuth();
@@ -15,9 +14,18 @@ function App() {
     }
   }, [isAuthenticated]);
   return (
-    <>
-      <p>Hola mundo</p>
-    </>
+    <div >
+      <div className="banner-container">
+        <div className="banner-container-text">
+          <h1>Historias clínicas</h1>
+          <p>Una solución practica y efectiva para tus servicios clínicos.</p>
+          <Link to="/register">Regístrate</Link>
+        </div>
+        <div className="intro-container-img">
+          <img src={Psicologa} alt="psicologa"></img>
+        </div>
+      </div>
+    </div>
   );
 }
 
