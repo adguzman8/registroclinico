@@ -1,6 +1,6 @@
-import { useAuth } from "../context/auth.context";
+
 import { usePatients } from "../context/patients.context";
-import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 
 import "../assets/css/Dash.patients.table.css";
 
@@ -29,7 +29,7 @@ export default function PatientTable() {
                 <td>{item.document}</td>
                 <td>{item.eps}</td>
                 <td>
-                  <ModeEditOutlineOutlinedIcon
+                  <RemoveRedEyeOutlinedIcon className="icon-options"
                     onClick={() => {
                       setWindEditPat(!windEditPat);
                       obtenerPatient(item._id);

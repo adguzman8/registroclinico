@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   creatPatient,
   obtenpatients,
@@ -70,6 +70,7 @@ export const PatientsProvider = ({ children }) => {
       console.log(error);
     }
   };
+
   return (
     <PatientsContext.Provider
       value={{

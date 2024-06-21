@@ -22,6 +22,7 @@ export default function DashPatients() {
           <button
             onClick={() => {
               setWindCreatePat(!windCreatePat);
+
             }}
             className="button1"
           >

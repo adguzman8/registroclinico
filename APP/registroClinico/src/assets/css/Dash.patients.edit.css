@@ -1,7 +1,8 @@
-.edit-patient-disable{
+.edit-patient-disable {
     display: none;
 }
-.edit-patient-enable{
+
+.edit-patient-enable {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,18 +13,39 @@
     justify-content: center;
     align-items: center;
 }
-.edit-patient-background{
+
+.edit-patient-background {
     position: absolute;
     background-color: rgb(165, 165, 165);
     opacity: .5;
     height: 100%;
     width: 100%;
 }
-.edit-patient-list{
+
+.edit-patient-list {
     margin: 10px;
     overflow-y: auto;
     position: absolute;
     background-color: rgb(255, 255, 255);
     height: 90%;
     width: 90%;
+}
+
+.patient-data>h2 {
+    color: var(--cornflower-blue300);
+    margin-bottom: 0px;
+    margin-left: 10px;
+
+}
+
+.patient-data>h2>span {
+    font-weight: 300;
+    color: var(--black-500);
+}
+
+.patient-data>span {
+    font-size: 12px;
+    color: var(--black-300);
+    margin-left: 10px;
+
 }
