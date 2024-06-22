@@ -162,3 +162,9 @@
 .container-data-document{
     overflow-y: hidden;
 }
+.documento-data-patient h3{
+ margin:0px;
+}
+.documento-data-patient p{
+ margin:0px;
+}

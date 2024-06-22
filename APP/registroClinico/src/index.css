@@ -1,9 +1,10 @@
-body{
+body {
   margin: 0;
   border: 0;
   font-family: "Nunito", sans-serif;
 }
-:root{
+
+:root {
   --cornflower-blue50: #f1f4fd;
   --cornflower-blue100: #dfe7fa;
   --cornflower-blue200: #c6d5f7;
@@ -28,7 +29,7 @@ body{
   --black-950: #000000;
 }
 
-.button1{
+.button1 {
   padding: 8px;
   border-radius: 10px;
   background-color: var(--cornflower-blue300);
@@ -37,9 +38,10 @@ body{
   cursor: pointer;
 
 }
-.button1:hover{
+
+.button1:hover {
   background-color: #fff;
-  color:var(--cornflower-blue300);
+  color: var(--cornflower-blue300);
 }
 
 ::-webkit-scrollbar {
@@ -59,7 +61,7 @@ body{
   border-radius: 5px;
 }
 
-.close-wind{
+.close-wind {
   color: var(--cornflower-blue600);
   font-weight: 800;
   font-size: 30px;
@@ -68,55 +70,64 @@ body{
   cursor: pointer;
   top: 10px;
 }
-.close-wind:hover{
+
+.close-wind:hover {
   color: var(--black-500);
 
 }
 
-.Input1{
+.Input1 {
   border-radius: 20px;
   border: 1px solid var(--black-300);
   padding: 5px;
   margin-bottom: 5px;
 }
-.Input1:focus{
+
+.Input1:focus {
   border: 1px solid var(--cornflower-blue300);
   outline: none;
 }
 
-.Input1-select{
+.Input1-select {
   border-radius: 20px;
   border: 1px solid var(--black-300);
   padding: 5px;
   margin-bottom: 5px;
-  appearance: none; /* Elimina el estilo por defecto del navegador */
+  appearance: none;
+  /* Elimina el estilo por defecto del navegador */
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-.Input1-select:focus{
+
+.Input1-select:focus {
   border: 1px solid var(--cornflower-blue300);
   outline: none;
 }
 
 
-.Input1-textarea{
+.Input1-textarea {
   border-radius: 20px;
   border: 1px solid var(--black-300);
   padding: 5px;
   margin-bottom: 5px;
-  appearance: none; /* Elimina el estilo por defecto del navegador */
+  appearance: none;
+  /* Elimina el estilo por defecto del navegador */
   -webkit-appearance: none;
   -moz-appearance: none;
-  transition: border-color 0.3s ease-in-out; /* Permite cambiar el tamaño solo verticalmente */
+  transition: border-color 0.3s ease-in-out;
+  /* Permite cambiar el tamaño solo verticalmente */
 }
-.Input1-textarea:focus{
+
+.Input1-textarea:focus {
   border: 1px solid var(--cornflower-blue300);
   outline: none;
 }
-.disable{
+
+.disable {
   display: none;
 }
-.errors{
+
+.errors {
   font-size: 12px;
   color: red;
   background-color: #ffdbdb;
@@ -124,4 +135,21 @@ body{
   border: 1px solid red;
   margin: 0px;
   opacity: .5;
+}
+.Document-historia-container{
+  overflow-y: scroll;
+  height: 68vh;
+}
+.form-historia-create {
+
+}
+.form-historia-create label{
+  font-weight: 800;
+}
+.form-historia-create textarea {
+  width: 50%;
+  min-height: 150px;
+}
+.MuiInputBase-root{
+  height:45px;
 }
