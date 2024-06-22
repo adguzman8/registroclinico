@@ -7,6 +7,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Anamnesis from "./Dash.Historia.Anamnesis";
+import Evolucion from "./Dash.Historia.evolucion";
 
 
 export default function Historia() {
@@ -21,21 +23,20 @@ export default function Historia() {
         // Renombra la función a 'Panel1' y asegúrate de pasar 'id' como prop
         switch (age) {
             case 1:
-                return <h1>Calendario</h1>; // Cambia "Comercios" por "Comercios"
+                return <Anamnesis />; // Cambia "Comercios" por "Comercios"
             case 2:
-                return <h1>Calendario</h1>; // Cambia "productos" por "Productos"
+                return <Evolucion />; // Cambia "productos" por "Productos"
             case 3:
-                return <h1>Calendario</h1>; // Cambia "Comercios" por "Comercios"
+                return <Evolucion />; // Cambia "Comercios" por "Comercios"
             case 4:
-                return <h1>Integración</h1>; // Cambia "Comercios" por "Comercios"
+                return <h1>Reporte terapéutico</h1>; // Cambia "Comercios" por "Comercios"
             case 5:
-                return <h1>Actividades</h1>; // Cambia "Comercios" por "Comercios"
-            case 6:
-                return <h1>Facturación</h1>; // Cambia "Comercios" por "Comercios"
-            case 7:
-                return <h1>Usuario</h1>; // Cambia "Comercios" por "Comercios"
+                return <h1>Valoración psicológica</h1>; // Cambia "Comercios" por "Comercios"
             default:
-                return <h1>Home4</h1>; // Cambia "dashboard" por "Dashboard"
+                return <div style={{ "display": "flex", "justifyContent": "center", "flexDirection": "column", "alignItems": "center", "height": "100%" }}>
+                    <h2>Seleccione el documento</h2>
+                    <p>Seleccione el documento que se va a realizar.</p>
+                    </div>; // Cambia "dashboard" por "Dashboard"
         }
     };
     const handleChange = (event) => {
@@ -159,6 +160,7 @@ export default function Historia() {
                     </FormControl>
                 </div>
                 <div className="container-data-document">
+                    <span className="close-wind" onClick={() => { setWinCreateDocum(!winCreateDocum) }}>X</span>
                     <SeccionDocument />
                 </div>
             </div>

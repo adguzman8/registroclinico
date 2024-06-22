@@ -3,6 +3,7 @@ import {
   creatPatient,
   obtenpatients,
   obtaiPatient,
+  obtaiPatientByDocument
 } from "../API/patients.API.jsx";
 export const PatientsContext = createContext();
 
@@ -22,6 +23,7 @@ export const PatientsProvider = ({ children }) => {
   const [windEditPat, setWindEditPat] = useState(false);
   const [patients, setPatients] = useState([]);
   const [obtainedPatient, setObtainedPatient] = useState("");
+  const [ObtainedPatientByDocument, setObtainedPatientByDocument] = useState("");
 
 
   const CreateItPatient = async (values) => {
@@ -71,6 +73,16 @@ export const PatientsProvider = ({ children }) => {
     }
   };
 
+  const ObtainPatientbydoc = async(typeDocument,SelectPaciente)=>{
+    try {
+      const res = await obtaiPatientByDocument(typeDocument,SelectPaciente);
+      setObtainedPatientByDocument(res.data);
+    } catch (error) {
+      console.log(error);
+      setObtainedPatientByDocument("");
+    }
+  }
+
   return (
     <PatientsContext.Provider
       value={{
@@ -82,7 +94,9 @@ export const PatientsProvider = ({ children }) => {
         setWindEditPat,
         windEditPat,
         obtenerPatient,
-        obtainedPatient
+        obtainedPatient,
+        ObtainPatientbydoc,
+        ObtainedPatientByDocument,
       }}
     >
       {children}

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth.context";
 import "../assets/css/Menu.css"
-
+import Logo from "../assets/img/Logo_prueba_1.png"
 function Menu() {
     const { isAuthenticated } = useAuth();
     return (
         <div className={isAuthenticated ? "disable" : "Header-menu"}>
-            <div>Logo</div>
+            <div><img src={Logo} alt="Logo" style={{"width":"65px"}}></img></div>
             <div className="Header-menu-links">
                 <Link to="/">Inicio</Link>
                 <Link to="/login">login</Link>
