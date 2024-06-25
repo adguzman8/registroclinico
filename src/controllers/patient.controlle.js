@@ -47,22 +47,37 @@ export const createPatient = async (req, res) => {
     res.json(error);
   }
 };
-export const listPatients = async (req, res) => { 
+export const listPatients = async (req, res) => {
   try {
     //console.log(req.params.id)
-    const Pacientes = await Patient.find({ id_doc : req.params.id }).populate('id_doc'); //populate trae todos los datos del usuari, incluso la contraseña
+    const Pacientes = await Patient.find({ id_doc: req.params.id }).populate('id_doc'); //populate trae todos los datos del usuari, incluso la contraseña
     res.json(Pacientes);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-export const obtainPatient = async (req, res) => { 
+export const obtainPatient = async (req, res) => {
   try {
     console.log(req.params.id)
-    const obtainPatientData = await Patient.find({ _id : req.params.id }).populate('_id'); //populate trae todos los datos del usuari, incluso la contraseña
+    const obtainPatientData = await Patient.find({ _id: req.params.id }).populate('_id'); //populate trae todos los datos del usuari, incluso la contraseña
     res.json(obtainPatientData);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export const obtainPatientByDocument = async (req, res) => {
+  try {
+    console.log(req.params.id1)
+    console.log(req.params.id2)
+    const obtainPatientDataDocument = await Patient.findOne({ document: req.params.id1, typedocument: req.params.id2 }).populate('_id'); //populate trae todos los datos del usuari, incluso la contraseña
+    if (obtainPatientDataDocument) {
+      res.json(obtainPatientDataDocument);
+    } else {
+      res.status(404).json({ message: 'Patient not found' });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+} 

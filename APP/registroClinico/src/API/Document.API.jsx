@@ -1,4 +1,5 @@
 import axios from "./axios.jsx";
 
 
-export const creatPatient = async (data) => axios.get(`/documentation/create`, data);
+export const creatDocument = async (data) => axios.post(`/document/create`, data);
+export const GetDocuments = async (data) => axios.get(`/documents/${data}`);

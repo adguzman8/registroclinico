@@ -173,7 +173,7 @@ export function CreatePatient() {
           <br></br>
           <textarea className="Input1-textarea TextArea-creat-patient"
             name="observations"
-            {...register("observations", { required: true })}
+            {...register("observations")}
           />
           <br></br>
           <button className="button1 create-patiente-button1">Crear</button>

@@ -3,7 +3,9 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap-reverse;
-    background-color: var(--cornflower-blue50);
+    background-image: url("../src/assets/img/imagen.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: calc(100vh - 60px);
 }
 

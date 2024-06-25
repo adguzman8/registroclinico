@@ -1,20 +1,25 @@
 import "../assets/css/Dash.Historia.css"
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import ClearAllOutlinedIcon from '@mui/icons-material/ClearAllOutlined';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Anamnesis from "./Dash.Historia.Anamnesis";
-import Evolucion from "./Dash.Historia.evolucion";
+import Anamnesis from "./Dash.Historia.Anamnesis.jsx";
+import Evolucion from "./Dash.Historia.evolucion.jsx";
+import { useDocuments } from "../context/documents.context.jsx";
 
 
 export default function Historia() {
     const [winFilter, setWinFilter] = useState(false);
     const [winOrder, setWinOrder] = useState(false);
     const [winCreateDocum, setWinCreateDocum] = useState(false);
+
+    const { getDocuments, Documentos } = useDocuments();
 
 
     const [age, setAge] = useState('');
@@ -36,7 +41,7 @@ export default function Historia() {
                 return <div style={{ "display": "flex", "justifyContent": "center", "flexDirection": "column", "alignItems": "center", "height": "100%" }}>
                     <h2>Seleccione el documento</h2>
                     <p>Seleccione el documento que se va a realizar.</p>
-                    </div>; // Cambia "dashboard" por "Dashboard"
+                </div>; // Cambia "dashboard" por "Dashboard"
         }
     };
     const handleChange = (event) => {
@@ -44,6 +49,9 @@ export default function Historia() {
         console.log(event.target.value)
     };
 
+    useEffect(() => {
+        getDocuments()
+    }, [])
     return (
         <div className="history-container">
             <div className="history-container-title">
@@ -117,20 +125,28 @@ export default function Historia() {
                     <table>
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Id</th>
-                                <th>Id</th>
-                                <th>Id</th>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Tipo de Doc.</th>
+                                <th>No. Doc</th>
+                                <th>Reporte</th>
+                                <th>Accion</th>
                             </tr>
 
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Id</td>
-                                <td>Id</td>
-                                <td>Id</td>
-                                <td>Id</td>
-                            </tr>
+                            {Documentos &&
+                                Documentos.map((item,index) => (
+                                    <tr>
+                                        <td style={{"fontSize":"13px", "color":"var(--black-400)"}}>{index}</td>
+                                        <td>{item.name} {item.lastname}</td>
+                                        <td style={{"textAlign":"center"}}> {item.typeDocument}</td>
+                                        <td >{item.document}</td>
+                                        <td>{item.category}</td>
+                                        <td style={{"textAlign":"center"}}><RemoveRedEyeOutlinedIcon/></td>
+                                    </tr>
+                                ))}
+
                         </tbody>
                     </table>
                 </div>
@@ -160,7 +176,9 @@ export default function Historia() {
                     </FormControl>
                 </div>
                 <div className="container-data-document">
-                    <span className="close-wind" onClick={() => { setWinCreateDocum(!winCreateDocum) }}>X</span>
+                    <span className="close-wind" onClick={() => { 
+                        setWinCreateDocum(!winCreateDocum)
+                     }}>X</span>
                     <SeccionDocument />
                 </div>
             </div>

@@ -5,7 +5,7 @@ import cors from "cors";
 
 import authRoutes from "../src/routes/auth.routes.js"
 import patientRoutes from "../src/routes/patient.routes.js"
-
+import documentRoutes from "../src/routes/document.routes.js"
 const app = express();
 
 app.use(cors({
@@ -19,5 +19,6 @@ app.use(cookieParser());
 
 app.use("/api", authRoutes);
 app.use("/api", patientRoutes);
+app.use("/api", documentRoutes)
 
 export default app;

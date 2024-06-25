@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "../assets/css/Register.css"
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { useAuth } from "../context/auth.context";
 import { useForm } from "react-hook-form";
 
@@ -68,6 +68,10 @@ function Register() {
           {errors.password && (
             <p className="errors">Correo requerido</p>
           )}
+          <div style={{"display":"flex","margin":"auto","alingItem":"center"}}>
+
+          <input type="checkbox"></input><p> Acepta <Link to="/Terminosycondiciones"> terminos y condiciones.</Link></p>
+          </div>
           <button className="button1 register-button">Registrar</button>
         </form>
       </div>

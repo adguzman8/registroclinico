@@ -14,7 +14,7 @@ function App() {
     }
   }, [isAuthenticated]);
   return (
-    <div >
+    <div className="div-banner">
       <div className="banner-container">
         <div className="banner-container-text">
           <h1>Historias clínicas</h1>

@@ -138,7 +138,7 @@ body {
 }
 .Document-historia-container{
   overflow-y: scroll;
-  height: 68vh;
+  height: calc(100vh - 180px);
 }
 .form-historia-create {
 

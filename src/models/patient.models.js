@@ -27,11 +27,9 @@ const patientsSchema = new mongoose.Schema(
     },
     age: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     birthdate: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     phone: {
       type: String,
@@ -40,26 +38,21 @@ const patientsSchema = new mongoose.Schema(
     },
     eps: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     civilStatus: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     ocupation: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     address: {
       type: String,
     },
     city: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     department: {
       type: String,
-      required: true, //Es obligatorio el dato
     },
     observations: {
       type: String,

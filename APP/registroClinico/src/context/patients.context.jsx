@@ -37,7 +37,7 @@ export const PatientsProvider = ({ children }) => {
           showConfirmButton: false,
           timer: 1500,
         });
-        setWindCreatePat(false);
+        setWindCreatePat(false)
       }
       if (res.status !== 200) {
         Swal.fire({
@@ -47,7 +47,8 @@ export const PatientsProvider = ({ children }) => {
           showConfirmButton: false,
           timer: 1500,
         });
-        setWindCreatePat(true);
+        setWindCreatePat(true)
+
       }
     } catch (error) {
       console.log(error);
@@ -97,6 +98,7 @@ export const PatientsProvider = ({ children }) => {
         obtainedPatient,
         ObtainPatientbydoc,
         ObtainedPatientByDocument,
+        setObtainedPatientByDocument
       }}
     >
       {children}
