@@ -12,6 +12,7 @@ import Select from '@mui/material/Select';
 import Anamnesis from "./Dash.Historia.Anamnesis.jsx";
 import Evolucion from "./Dash.Historia.evolucion.jsx";
 import { useDocuments } from "../context/documents.context.jsx";
+import StickyHeadTable from "./Dash.Historia.table.jsx";
 
 
 export default function Historia() {
@@ -122,33 +123,7 @@ export default function Historia() {
 
                 </div>
                 <div className="history-container-table-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Tipo de Doc.</th>
-                                <th>No. Doc</th>
-                                <th>Reporte</th>
-                                <th>Accion</th>
-                            </tr>
-
-                        </thead>
-                        <tbody>
-                            {Documentos &&
-                                Documentos.map((item,index) => (
-                                    <tr>
-                                        <td style={{"fontSize":"13px", "color":"var(--black-400)"}}>{index}</td>
-                                        <td>{item.name} {item.lastname}</td>
-                                        <td style={{"textAlign":"center"}}> {item.typeDocument}</td>
-                                        <td >{item.document}</td>
-                                        <td>{item.category}</td>
-                                        <td style={{"textAlign":"center"}}><RemoveRedEyeOutlinedIcon/></td>
-                                    </tr>
-                                ))}
-
-                        </tbody>
-                    </table>
+                    <StickyHeadTable/>                    
                 </div>
             </div>
             <div className={winCreateDocum ? "create-document" : "disable"}>

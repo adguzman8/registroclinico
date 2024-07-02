@@ -98,7 +98,8 @@
     -moz-box-shadow: 0px 10px 22px -19px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 22px -19px rgba(0, 0, 0, 0.75);
 }
-.filter-option>span{
+
+.filter-option>span {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -106,7 +107,8 @@
     font-weight: 800;
     cursor: pointer;
 }
-.filter-order{
+
+.filter-order {
     position: absolute;
     background-color: #ffffff;
     top: 42px;
@@ -119,12 +121,13 @@
     -moz-box-shadow: 0px 10px 22px -19px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 22px -19px rgba(0, 0, 0, 0.75);
 }
-.filter-option>form{
+
+.filter-option>form {
     margin-top: 25px;
     border-top: 1px solid var(--black-100);
 }
 
-.filter-order>span{
+.filter-order>span {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -132,21 +135,25 @@
     font-weight: 800;
     cursor: pointer;
 }
-.filter-order>form{
+
+.filter-order>form {
     margin-top: 25px;
     border-top: 1px solid var(--black-100);
 }
-.history-container-table-table{
+
+.history-container-table-table {
     display: flex;
-    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
 }
-.history-container-table-table>table{
+
+.history-container-table-table>table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
-.create-document{
+.create-document {
     position: fixed;
     top: 0;
     right: 0;
@@ -156,15 +163,20 @@
     background-color: #fff;
     height: 100%;
 }
-.create-document>div{
+
+.create-document>div {
     margin: 2%;
 }
-.container-data-document{
+
+.container-data-document {
     overflow-y: hidden;
 }
-.documento-data-patient h3{
- margin:0px;
+
+.documento-data-patient h3 {
+    margin: 0px;
 }
-.documento-data-patient p{
- margin:0px;
+
+.documento-data-patient p {
+    margin: 0px;
 }
+

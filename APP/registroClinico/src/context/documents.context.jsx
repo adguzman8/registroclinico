@@ -15,7 +15,8 @@ export const useDocuments = () => {
 export const DocumentsProvider = ({ children }) => {
   const { user } = useAuth()
 
-  const [Documentos,setDocumentos]=useState("")
+  const [Documentos, setDocumentos] = useState("")
+
   const CreateDocument = async (values) => {
     try {
       console.log("datos a enviar", values)
@@ -51,14 +52,16 @@ export const DocumentsProvider = ({ children }) => {
     }
   }
 
-  const getDocuments = async (values) => {
+  const getDocuments = async () => {
     try {
-      const res = await GetDocuments(user.id)
-      setDocumentos(res.data)
+      const res = await GetDocuments(user.id);
+      setDocumentos(res.data);
+      console.log(res.data)
     } catch (error) {
       console.log(error);
     }
   }
+
   return (
     <DocumentsContext.Provider
       value={{
