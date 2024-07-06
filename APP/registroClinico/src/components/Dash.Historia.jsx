@@ -12,13 +12,13 @@ import Select from '@mui/material/Select';
 import Anamnesis from "./Dash.Historia.Anamnesis.jsx";
 import Evolucion from "./Dash.Historia.evolucion.jsx";
 import { useDocuments } from "../context/documents.context.jsx";
-import StickyHeadTable from "./Dash.Historia.table.jsx";
-
+import TablaDocuments from "./Dashboar.Hitorias//Dash.Historia.table.jsx";
+import { AnamnesisDoc } from "./Dashboar.Hitorias/Export.Document.jsx";
+import { PDFDownloadLink,PDFViewer  } from '@react-pdf/renderer';
 
 export default function Historia() {
-    const [winFilter, setWinFilter] = useState(false);
-    const [winOrder, setWinOrder] = useState(false);
     const [winCreateDocum, setWinCreateDocum] = useState(false);
+    const [PreviewDocum, setPreviewDocum] = useState(false);
 
     const { getDocuments, Documentos } = useDocuments();
 
@@ -58,73 +58,14 @@ export default function Historia() {
             <div className="history-container-title">
                 <h2>Historias</h2>
                 <button className="button1" onClick={() => {
+                    setPreviewDocum(!PreviewDocum)
+                }}>abrir</button>
+                <button className="button1" onClick={() => {
                     setWinCreateDocum(!winCreateDocum)
                 }}>Crear +</button>
             </div>
             <div className="history-container-table">
-                <div className="history-container-table-data">
-                    <div>
-                        <p>Historias</p>
-                        <span>1</span>
-                    </div>
-                    <div>
-                        <p>Seguimientos</p>
-                        <span>1</span>
-                    </div>
-                    <div>
-                        <p>Pacientes</p>
-                        <span>1</span>
-                    </div>
-                    <div>
-                        <p>Data</p>
-                        <span>1</span>
-                    </div>
-                </div>
-                <div className="history-container-table-filter">
-                    <div>
-
-                        <form>
-                            <input className="Input1" type="text"></input>
-                        </form>
-                        <button onClick={() => {
-                            setWinFilter(!winFilter)
-                            setWinOrder(false)
-
-                        }}><FilterAltOutlinedIcon /></button>
-                        <div className={winFilter ? "filter-option" : "disable"}>
-                            <span onClick={() => {
-                                setWinFilter(!winFilter)
-                            }}>X</span>
-                            <form>
-                                <label>Fecha</label>
-                                <input type="text"></input>
-                                <label>item</label>
-                                <input type="text"></input>
-                                <button className="button1">Aplicar</button>
-                            </form>
-                        </div>
-                        <button onClick={() => {
-                            setWinFilter(false)
-                            setWinOrder(!winOrder)
-                        }}><ClearAllOutlinedIcon /></button>
-                        <div className={winOrder ? "filter-order" : "disable"}>
-                            <span onClick={() => {
-                                setWinOrder(!winOrder)
-                            }}>X</span>
-                            <div>
-                                Fecha
-                            </div>
-                            <div>
-                                Nombre
-                            </div>
-                            <button className="button1">Aplicar</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div className="history-container-table-table">
-                    <StickyHeadTable/>                    
-                </div>
+                <TablaDocuments data={Documentos} />
             </div>
             <div className={winCreateDocum ? "create-document" : "disable"}>
                 <div>
@@ -151,12 +92,23 @@ export default function Historia() {
                     </FormControl>
                 </div>
                 <div className="container-data-document">
-                    <span className="close-wind" onClick={() => { 
+                    <span className="close-wind" onClick={() => {
                         setWinCreateDocum(!winCreateDocum)
-                     }}>X</span>
+                    }}>X</span>
                     <SeccionDocument />
                 </div>
             </div>
+            
+                {PreviewDocum && (<div style={{ position: "absolute", top: "1px", height: "100vh", width: "80vh" }}>
+                <PDFDownloadLink document={<AnamnesisDoc/>} fileName="somename.pdf">
+                    {({ blob, url, loading, error }) =>
+                        loading ? 'Loading document...' : 'Descargar ahora!'
+                }
+                </PDFDownloadLink>
+
+                </div>
+                )
+                }
         </div>
     )
 }

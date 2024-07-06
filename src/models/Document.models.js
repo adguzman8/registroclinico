@@ -29,6 +29,7 @@ const documentsSchema = new mongoose.Schema(
         document: {
             type: String,
             required: true, //Es obligatorio el dato
+            trim:true,
         },
         reasonConsulta: {
             type: String,

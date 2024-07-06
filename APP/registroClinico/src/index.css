@@ -153,3 +153,6 @@ body {
 .MuiInputBase-root{
   height:45px;
 }
+hr{
+  opacity: .3;
+}

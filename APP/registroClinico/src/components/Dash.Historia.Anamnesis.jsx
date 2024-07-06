@@ -31,12 +31,7 @@ export default function Anamnesis() {
         listPatients(user.id)
     }, [])
 
-    const [content, setContent] = useState('');
 
-    const handleEditorChange = (content, editor) => {
-        setContent(content);
-        console.log('Content was updated:', content);
-    };
 
 
     //formulario
